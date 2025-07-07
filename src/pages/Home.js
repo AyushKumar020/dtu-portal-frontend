@@ -31,7 +31,7 @@ function Home() {
               className="form-control mb-2 mr-sm-2"
               value={rollNo}
               onChange={(e) => setRollNo(e.target.value)}
-              placeholder="Enter your Roll Number (e.g., 22/CS/007)"
+              placeholder="Enter your Roll Number (e.g., 23/CS/007)"
               required
             />
             {/* <button type="submit" className="btn btn-primary mb-2">View Results</button>
