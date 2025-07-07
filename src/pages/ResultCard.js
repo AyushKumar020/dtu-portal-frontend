@@ -44,7 +44,7 @@ function ResultCard() {
       </button>
       <input
         type="text"
-        placeholder="Enter Roll Number"
+        placeholder="Enter Roll Number (e.g.,  23/CS/007)"
         value={rollNo}
         onChange={(e) => setRollNo(e.target.value)}
       />
