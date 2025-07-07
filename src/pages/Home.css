@@ -1,0 +1,51 @@
+.home-container {
+  background-image: url('../images/dtu\ background\ img.png'); /* optional educational background */
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  position: relative;
+  color: white;
+}
+
+.overlay {
+  background-color: rgba(0, 0, 0, 0.6); /* dark overlay */
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.content {
+  text-align: center;
+  max-width: 500px;
+  padding: 20px;
+}
+
+h1 {
+  font-weight: 600;
+  font-size: 2.5rem;
+}
+
+p {
+  font-size: 1.2rem;
+}
+
+.dtu-logo-home {
+  width: 200px;
+  height: auto;
+}
+.footer {
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
+  color: rgba(143, 143, 143, 0.397);
+  font-size: 0.9rem;
+}
+
+.menu-icon {
+  transition: transform 0.3s ease;
+}
+
+.dropdown-toggle:hover .menu-icon {
+  transform: rotate(90deg);
+}

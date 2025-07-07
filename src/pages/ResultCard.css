@@ -1,0 +1,207 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  background-color: #121212; /* consistent dark mode */
+  height: 100%;
+}
+
+/* Ensure the root app div also fills the height */
+#root {
+  min-height: 100vh;
+}
+
+.result-card-page {
+  text-align: center;
+  margin-top: 50px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  min-height: 100vh;
+  background-color: #121212; /* set background directly here */
+}
+
+.result-card-page input {
+  padding: 10px 15px;
+  width: 260px;
+  margin: 10px;
+  border: none;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.6);
+  box-shadow: inset 0 2px 5px rgba(0,0,0,0.1);
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.result-card-page input:focus {
+  outline: none;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 0 0 3px rgba(78, 84, 200, 0.3);
+}
+
+.result-card-page button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #4e54c8, #8f94fb);
+  color: white;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  transition: all 0.3s ease;
+}
+
+.result-card-page button:hover {
+  background: linear-gradient(135deg, #8f94fb, #4e54c8);
+  transform: translateY(-2px);
+}
+
+.result-card-page .card-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.result-card-page .result-card {
+  background: linear-gradient(135deg, #f6f9ff, #d0e6ff);
+  color: #222;
+  padding: 25px;
+  border-radius: 20px;
+  text-align: center;
+  width: 340px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  border: 1px solid #ccc;
+}
+
+.result-card-page .dtu-logo {
+  width: 70px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+  border: 2px solid #ccc;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.result-card-page h2 {
+  margin-bottom: 20px;
+  font-weight: 600;
+  font-size: 15px;
+  color: #555;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.result-card-page .student-info {
+  margin-top: 10px;
+  border-top: 1px solid #ddd;
+  padding-top: 10px;
+}
+
+.result-card-page .student-info h3 {
+  margin: 10px 0 5px 0;
+  color: #222;
+  font-size: 18px;
+}
+
+.result-card-page .student-info p {
+  margin: 5px 0;
+  color: #333;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.result-card-page .batch-branch {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 5px;
+}
+
+.result-card-page .batch-branch p {
+  margin: 0;
+  color: #333;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.result-card-page .cgpa-info {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+  border-top: 1px solid #ddd;
+  padding-top: 10px;
+}
+
+.result-card-page .cgpa-box {
+  background: linear-gradient(145deg, #e0f0ff, #ffffff);
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  padding: 10px 15px;
+  min-width: 100px;
+  box-shadow: inset 0 2px 5px rgba(0,0,0,0.05), 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.result-card-page .cgpa-box .label {
+  font-size: 12px;
+  color: #555;
+}
+
+.result-card-page .cgpa-box .value {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+}
+
+.result-card-page .btn-download {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background: linear-gradient(135deg, #00c6ff, #0072ff);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  transition: all 0.3s ease;
+}
+
+.result-card-page .btn-download:hover {
+  background: linear-gradient(135deg, #0072ff, #00c6ff);
+  transform: translateY(-2px);
+}
+
+/* Dark Mode Styles specific */
+.result-card-page.dark-mode {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+.result-card-page.dark-mode .result-card {
+  background: linear-gradient(135deg, #1e1e1e, #2a2a2a);
+  color: #e0e0e0;
+  border: 1px solid #333;
+}
+
+.result-card-page.dark-mode .result-card h2,
+.result-card-page.dark-mode .student-info h3,
+.result-card-page.dark-mode .student-info p,
+.result-card-page.dark-mode .batch-branch p,
+.result-card-page.dark-mode .cgpa-box .label,
+.result-card-page.dark-mode .cgpa-box .value {
+  color: #e0e0e0;
+}
+
+.result-card-page.dark-mode .cgpa-box {
+  background: #2c2c2c;
+  border: 1px solid #444;
+}
+
+.result-card-page h1 {
+  margin-bottom: 20px;
+  font-weight: 600;
+  font-size: 25px; /* adjust as needed for heading prominence */
+  color: #e0e0e0; /* default for light mode */
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+

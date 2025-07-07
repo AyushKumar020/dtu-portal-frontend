@@ -1,0 +1,219 @@
+/* 🌟 Global page styling */
+.results-page {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 20px;
+  background: #f5f5f5;
+  min-height: 100vh;
+  color: #333;
+}
+
+.results-dark-mode {
+  background: #121212;
+  color: #e0e0e0;
+}
+
+/* 🌟 Main heading styling */
+.results-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.results-header h2 {
+  font-size: 26px;
+  font-weight: bold;
+  background: linear-gradient(90deg, #007bff, #00c6ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.results-header h5 {
+  font-weight: 500;
+  color: #555;
+}
+
+.results-dark-mode .results-header h5 {
+  color: #ccc;
+}
+
+/* 🌟 Toggle container styling */
+.toggle-container {
+  text-align: right;
+  margin-bottom: 20px;
+}
+
+/* 🌟 Student information card */
+.student-card {
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  border-left: 5px solid #007bff;
+}
+
+.results-dark-mode .student-card {
+  background: #1e1e1e;
+  border-left: 5px solid #00c6ff;
+}
+
+.student-card h5 {
+  margin-bottom: 15px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.student-card p {
+  margin: 4px 0;
+  font-size: 14px;
+}
+
+/* 🌟 Semester card styling */
+.semester-card {
+  background: white;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.results-dark-mode .semester-card {
+  background: #1e1e1e;
+}
+
+.semester-header {
+  background: linear-gradient(90deg, #007bff, #00c6ff);
+  color: white;
+  padding: 10px;
+  border-radius: 8px 8px 0 0;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.semester-body {
+  padding: 15px;
+}
+
+/* 🌟 Results table styling - compact */
+.results-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 5px;
+  table-layout: fixed;
+}
+
+.results-table th, .results-table td {
+  border: 1px solid #ddd;
+  padding: 4px 8px;
+  font-size: 13px;
+  word-wrap: break-word;
+}
+
+.results-table th {
+  background-color: #343a40;
+  color: white;
+  font-size: 14px;
+}
+
+.results-dark-mode .results-table th,
+.results-dark-mode .results-table td {
+  border: 1px solid #555;
+}
+
+.results-dark-mode .results-table th {
+  background-color: #444;
+}
+
+.results-dark-mode .results-table td {
+  background-color: #1e1e1e;
+  color: #e0e0e0;
+}
+
+/* 🌟 Semester summary styling */
+.semester-summary {
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+/* 🌟 CGPA card styling */
+.cgpa-card {
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.results-dark-mode .cgpa-card {
+  background: #1e1e1e;
+}
+
+/* 🌟 CGPA progress bar */
+.progress-bar-container {
+  background: #ddd;
+  border-radius: 20px;
+  overflow: hidden;
+  height: 25px;
+  width: 50%;
+  margin: 10px auto 0 auto;
+  box-shadow: inset 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.results-dark-mode .progress-bar-container {
+  background: #333;
+  box-shadow: inset 0 2px 4px rgba(0,0,0,0.5);
+}
+
+.progress-bar-fill {
+  background: linear-gradient(90deg, #00c6ff, #0072ff);
+  height: 100%;
+  text-align: center;
+  color: white;
+  font-weight: bold;
+  line-height: 25px;
+  border-radius: 20px;
+  transition: width 0.6s ease;
+  box-shadow: 0 0 15px rgba(0,255,255,0.6);
+}
+
+/* 🌟 Toggle switch styling */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 28px;
+  margin-right: 10px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: #ccc;
+  transition: .4s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: .4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #4caf50;
+}
+
+input:checked + .slider:before {
+  transform: translateX(22px);
+}
