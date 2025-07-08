@@ -3,9 +3,11 @@ import html2canvas from 'html2canvas';
 import './ResultCard.css';
 import logo from '../images/dtu_logo.png'; // Import the DTU logo image
 import HamburgerMenu from './HamBurgerMenu'; // Import the HamburgerMenu component
+
 function ResultCard() {
   const [rollNo, setRollNo] = useState('');
   const [student, setStudent] = useState(null);
+  const [sgpaData, setSgpaData] = useState([]);
   const [darkMode, setDarkMode] = useState(() => {
     return localStorage.getItem('resultCardDarkMode') === 'true';
   });
@@ -20,9 +22,32 @@ function ResultCard() {
       const res = await fetch(`https://dtu-portal-backend-production.up.railway.app/api/students/roll/${encodeURIComponent(rollNo)}`);
       const data = await res.json();
       setStudent(data);
+
+      // Fetch SGPA data for the student
+      const sgpaRes = await fetch(`https://dtu-portal-backend-production.up.railway.app/api/sgpa/${data.id}`);
+      const sgpaJson = await sgpaRes.json();
+      setSgpaData(sgpaJson);
     } catch (err) {
       console.error(err);
     }
+  };
+
+  const calculateAggregateCGPA = () => {
+    if (sgpaData.length === 0) return 'N/A';
+    let totalWeighted = 0;
+    let totalCredits = 0;
+
+    sgpaData.forEach(s => {
+      totalWeighted += s.sgpa * s.total_credits;
+      totalCredits += s.total_credits;
+    });
+
+    return (totalWeighted / totalCredits).toFixed(2);
+  };
+
+  const calculateBestSGPA = () => {
+    if (sgpaData.length === 0) return 'N/A';
+    return Math.max(...sgpaData.map(s => s.sgpa)).toFixed(2);
   };
 
   const downloadCard = () => {
@@ -37,14 +62,14 @@ function ResultCard() {
 
   return (
     <div className={`result-card-page ${darkMode ? 'dark-mode' : ''}`}>
-      <HamburgerMenu color= "white" linkColor="white"/>
-      <h1 >Get Your Personalised Result Card</h1>
+      <HamburgerMenu color="white" linkColor="white" />
+      <h1>Get Your Personalised Result Card</h1>
       <button className="toggle-btn" onClick={() => setDarkMode(!darkMode)}>
         {darkMode ? 'Light Mode' : 'Dark Mode'}
       </button>
       <input
         type="text"
-        placeholder="Enter Roll Number (e.g.,  23/CS/007)"
+        placeholder="Enter Roll Number (e.g., 23/CS/007)"
         value={rollNo}
         onChange={(e) => setRollNo(e.target.value)}
       />
@@ -66,11 +91,11 @@ function ResultCard() {
             <div className="cgpa-info">
               <div className="cgpa-box">
                 <div className="label">Best SGPA</div>
-                <div className="value">8.20</div>
+                <div className="value">{calculateBestSGPA()}</div>
               </div>
               <div className="cgpa-box">
-                <div className="label">Aggregate SGPA</div>
-                <div className="value">7.90</div>
+                <div className="label">Aggregate CGPA</div>
+                <div className="value">{calculateAggregateCGPA()}</div>
               </div>
             </div>
           </div>
